@@ -91,7 +91,6 @@ tab:CreateButton({
             print("Roblox tentou te kickar, mas o Anti-AFK impediu!")
         end)
         ba:Destroy()
-        print("A GUI foi removida, mas o Anti-AFK continua ativo!")
     end
 })
 
