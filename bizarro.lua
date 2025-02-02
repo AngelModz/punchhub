@@ -7,8 +7,21 @@ local window = Rayfield:CreateWindow({
     ConfigurationSaving = {
         Enabled = true,
         FolderName = "Rayfield",
-        FileName = "Config"
-    }
+        FileName = "Config" 
+   DisableRayfieldPrompts = false,
+   DisableBuildWarnings = false,
+
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = "Bizarro, 
+      FileName = "Bizarro Hub"
+
+    Discord = {
+      Enabled = true, 
+      Invite = "guiven", 
+      RememberJoins = true,
+   },
+   },
 })
 
 local tab = window:CreateTab("Scripts", 4483362458)
