@@ -23,7 +23,6 @@ local window = Rayfield:CreateWindow({
 })
 
 local tab = window:CreateTab("Scripts", 4483362458)
-
 -- Auto clicker
 tab:CreateToggle({
     Name = "Auto clicker",
@@ -97,6 +96,12 @@ tab:CreateButton({
             bb:ClickButton2(Vector2.new())
             print("Roblox tentou te kickar, mas o Anti-AFK impediu!")
         end)
+Rayfield:Notify({
+   Title = "Anti AFK Ativado",
+   Content = "Anti AFK ativado com sucesso!",
+   Duration = 3.5,
+   Image = 4483362458,
+})
 		ba:Destroy()
     end
 })
