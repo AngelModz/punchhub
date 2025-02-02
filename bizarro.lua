@@ -103,3 +103,4 @@ tab:CreateButton({
         loadstring(scriptCode)()
     end
 })
+Rayfield.Keybind:Set("LeftControl")
