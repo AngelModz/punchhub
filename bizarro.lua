@@ -97,9 +97,9 @@ tab:CreateButton({
             print("Roblox tentou te kickar, mas o Anti-AFK impediu!")
         end)
 Rayfield:Notify({
-   Title = "Anti AFK Ativado",
+   Title = "Anti AFK ativado!",
    Content = "Anti AFK ativado com sucesso!",
-   Duration = 3.5,
+   Duration = 6.5,
    Image = 4483362458,
 })
 		ba:Destroy()
