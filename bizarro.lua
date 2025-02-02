@@ -4,28 +4,27 @@ local window = Rayfield:CreateWindow({
     Name = "UniversalHub",
     LoadingTitle = "Carregando...",
     LoadingSubtitle = "Aguarde um momento",
+    Theme = "Ocean",
+    
+    DisableRayfieldPrompts = false,
+    DisableBuildWarnings = false,
+
     ConfigurationSaving = {
         Enabled = true,
-        FolderName = "Rayfield",
-        FileName = "Config" 
-   DisableRayfieldPrompts = false,
-   DisableBuildWarnings = false,
-
-   ConfigurationSaving = {
-      Enabled = true,
-      FolderName = "Bizarro, 
-      FileName = "Bizarro Hub"
+        FolderName = "Bizarro", 
+        FileName = "Bizarro Hub"
+    },
 
     Discord = {
-      Enabled = true, 
-      Invite = "guiven", 
-      RememberJoins = true,
-   },
-   },
+        Enabled = true, 
+        Invite = "guiven", 
+        RememberJoins = true,
+    },
 })
 
 local tab = window:CreateTab("Scripts", 4483362458)
 
+-- Auto clicker
 tab:CreateToggle({
     Name = "Auto clicker",
     CurrentValue = false,
@@ -40,16 +39,11 @@ tab:CreateToggle({
             end)
         else
             _G.running = false
-            spawn(function()
-                while _G.running do
-                    game:GetService("ReplicatedStorage").Events.DamageIncreaseOnClickEvent:FireServer()
-                    task.wait(0.1)
-                end
-            end)
         end
     end
 })
 
+-- Anti AFK
 tab:CreateButton({
     Name = "Anti AFK",
     Callback = function()
@@ -98,15 +92,16 @@ tab:CreateButton({
         ab.TextSize = 20
 
         local bb = game:GetService("VirtualUser")
-        game:GetService("Players").LocalPlayer.Idled:connect(function()
+        game:GetService("Players").LocalPlayer.Idled:Connect(function()
             bb:CaptureController()
             bb:ClickButton2(Vector2.new())
             print("Roblox tentou te kickar, mas o Anti-AFK impediu!")
         end)
-        ba:Destroy()
+		ba:Destroy()
     end
 })
 
+-- Dungeon farm
 tab:CreateButton({
     Name = "Dugeon farm",
     Callback = function()
