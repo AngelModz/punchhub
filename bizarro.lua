@@ -22,7 +22,8 @@ local window = Rayfield:CreateWindow({
     },
 })
 if game.PlaceId == 14236123211 then
-	local tab = window:CreateTab("Scripts", 4483362458)
+	local tab = window:CreateTab("Punch simulator", 4483362458)
+	local tab2 = window:CreateTab("Scripts", 4483362458)
 -- Auto clicker
 	tab:CreateToggle({
     Name = "Auto clicker",
@@ -107,10 +108,19 @@ Rayfield:Notify({
 })
 
 -- Dungeon farm
-tab:CreateButton({
-    Name = "Dugeon farm",
+tab2:CreateButton({
+    Name = "Load Dugeon farm",
     Callback = function()
         local scriptUrl = "https://raw.githubusercontent.com/LawrenceLud/Punch-Simulator/main/Punch%20Simulator.lua"
+        local scriptCode = game:HttpGet(scriptUrl)
+        
+        loadstring(scriptCode)()
+    end
+})
+tab2:CreateButton({
+    Name = "Load Infinite Yield",
+    Callback = function()
+        local scriptUrl = "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"
         local scriptCode = game:HttpGet(scriptUrl)
         
         loadstring(scriptCode)()
