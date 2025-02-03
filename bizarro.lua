@@ -21,10 +21,10 @@ local window = Rayfield:CreateWindow({
         RememberJoins = true,
     },
 })
-
-local tab = window:CreateTab("Scripts", 4483362458)
+if game.PlaceId == 14236123211 then
+	local tab = window:CreateTab("Scripts", 4483362458)
 -- Auto clicker
-tab:CreateToggle({
+	tab:CreateToggle({
     Name = "Auto clicker",
     CurrentValue = false,
     Callback = function(value)
@@ -116,3 +116,4 @@ tab:CreateButton({
         loadstring(scriptCode)()
     end
 })
+end
